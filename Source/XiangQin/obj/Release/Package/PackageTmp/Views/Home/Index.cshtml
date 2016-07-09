@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <title>相亲列表</title>
+    <script type="text/javascript" src="/Scripts/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="top-AD">
+            <div class="img-AD">
+                @foreach (var item in @ViewBag.adList as List<XiangQin.Models.AD>)
+                {
+                    <a href="@item.aLinkUrl">
+                        <img src="@item.aPicUrl" />
+                        <div class="AD-title">@item.aTitle</div>
+                    </a>
+                
+                }
+                
+            </div>
+        </div>
+        <div class="top-bar">
+            <div class="title">
+                <span>■ 相亲列表</span>
+            </div>
+            @*<div class="select">
+                <span class="text-pink">征友条件</span>
+                <img src="~/Content/sj.png" class="icon" height="50">
+            </div>*@
+        </div>
+        <div id="list-group">
+            @foreach (var item in @ViewBag.userList as List<XiangQin.Models.BaseUserInfo>)
+            {
+                <div class="list-item">
+                    <div class="item-left">
+                        <div class="item-face">
+                            <img src="@item.uFaceUrl" class="img-face" />
+                        </div>
+                    </div>
+                    <div class="item-right">
+                        <h3 class="title-black">@item.uName</h3>
+                        <div class="item-userInfo">
+                            <div class="item-userInfo-all">
+                                <span>@(DateTime.Now.Year-item.uYear-1)</span>岁 |
+                                <span>@item.uAddress</span> |
+                                <span>@item.uHeight</span>
+                            </div>
+                            <div class="item-user-point">
+                                <span>@item.uEdu</span>
+                                <span>@item.uHouse</span>
+                            </div>
+                        </div>
+                        <div class="item-user-speak">
+                            <span>@item.uSpeak</span>
+                        </div>
+                    </div>
+                    <div class="item-call">
+                        <div class="btn-box">
+                            @Html.ActionLink("看看Ta", "userinfo", "home", new { id = @item.uId }, new { @class = "btn btn-pink" })
+                        </div>
+                        <div class="btn-box">   
+                            <a href="javascript:;" onclick="$('#erweima').show();" class="btn btn-pink">联系小编</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div id="erweima" style="width:100%;position: fixed;height: 100%;z-index: 999999999999;top: 0px;left: 0px;display: none;background: rgba(0, 0, 0, 0.701961);">
+            <div style="position: fixed;top: 50%;left: 50%;margin: -218.235294117647px 0px 0px -130px;width: 260px;padding: 20px;box-sizing: border-box;line-height: 26px;background: rgb(255, 255, 255);">
+                <div onclick="$('#erweima').hide();" style="position: absolute;right: -15px;top: -15px;width: 30px;height: 30px;background: red;border-radius: 50%;text-align: center;vertical-align: middle;color: white;font-size: 20px;font-weight: bold;line-height: 26px;">x</div>
+                <div style="text-align:center;">
+                    <div style="font-size:14px;">微信号（长摁可复制）：</div>
+                    @*<div style="font-size:24px;color: #F75000">why254268997</div>*@
+                    <div>
+                        <img src="/images/ewm.jpg" width="220">
+                    </div>
+                    <div class="find_tits"><span style="color: #F75000;font-size: 14px;">扫描或长摁上方二维码</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

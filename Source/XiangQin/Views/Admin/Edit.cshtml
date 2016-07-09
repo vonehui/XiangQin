@@ -1,0 +1,483 @@
+﻿@model XiangQin.Models.BaseUserInfo
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>编辑用户</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/theme.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+
+    <script src="/lib/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei';
+        }
+    </style>
+    <!-- Demo page code -->
+
+    <style type="text/css">
+        #line-chart {
+            height: 300px;
+            width: 800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+
+        .brand {
+            font-family: georgia, serif;
+        }
+
+            .brand .first {
+                color: #ccc;
+                font-style: italic;
+            }
+
+            .brand .second {
+                color: #fff;
+                font-weight: bold;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .control-label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body>
+    <!--<![endif]-->
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="sidebar-nav">
+                    <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>操作</div>
+                    <ul id="dashboard-menu" class="nav nav-list collapse in">
+                        <li>@Html.ActionLink("返回首页", "Index", "Admin")</li>
+                        <li>@Html.ActionLink("用户管理", "List")</li>
+                        <li class="active">@Html.ActionLink("编辑用户", "Create")</li>
+                        <li>@Html.ActionLink("广告管理", "AD")</li>
+                        <li>@Html.ActionLink("退出账号", "loginOut")</li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="span9">
+                <h1 class="page-title">编辑用户</h1>
+                <div class="well">
+                    <h3 class="text-center">用户头像:</h3>
+                    <div class="form-group">
+                        <div class="col-sm-8 text-center">
+                            @using (Html.BeginForm("Upload", "UploadFile", FormMethod.Post, new { id = "form_postFile", enctype = "multipart/form-data" }))
+                            {
+                                <img src="" alt="暂无图片" id="img1" style="width:150px;height:150px; border:1px solid #ccc" />
+                                <input type='file' name='file' id='file' style="color:#fff" />
+                            }
+                        </div>
+                    </div>
+                    <h3 class="text-center">基本信息:</h3>
+                    <hr />
+                    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        @Html.HiddenFor(model => model.uId)
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">用户姓名:</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.uName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uName)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">头像:</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.uFaceUrl, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uFaceUrl)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">出生日期:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uYear, @ViewBag.selectAgeList as IEnumerable<SelectListItem>, new { @class = "form-control col-sm-6", @style = "width:70px;" })
+                                @Html.DropDownListFor(model => model.uMonth, @ViewBag.selectMonthList as IEnumerable<SelectListItem>, new { @class = "form-control col-sm-6", @style = "width:70px;" })
+                                @Html.DropDownListFor(model => model.uDate, @ViewBag.selectDateList as IEnumerable<SelectListItem>, new { @class = "form-control col-sm-6", @style = "width:70px;" })
+                                @Html.ValidationMessageFor(model => model.uYear)
+                                @Html.ValidationMessageFor(model => model.uMonth)
+                                @Html.ValidationMessageFor(model => model.uDate)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">地址:</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.uAddress, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uAddress)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">身高:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uHeight, @ViewBag.selectHeightList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uHeight)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">血型:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uBlood, @ViewBag.selectBloodList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uBlood)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">体重:</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.uWeight, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uWeight)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">学历:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uEdu, @ViewBag.selectEduList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uEdu)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">职业:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uProfession, @ViewBag.selectProList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uProfession)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">月收入:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uMoney, @ViewBag.selectMoneyList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uMoney)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">婚姻状况:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uMarriage, @ViewBag.selectMarriageList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uMarriage)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">住房情况:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uHouse, @ViewBag.selectHouseList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uHouse)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">爱好:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.uHobby, @ViewBag.selectHobbyList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uHobby)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">自我介绍:</label>
+                            <div class="col-sm-9">
+                                @Html.TextAreaFor(model => model.uSpeak, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.uSpeak)
+                            </div>
+                        </div>
+
+                        <hr />
+                        <h3 class="text-center">征友信息</h3>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期望对象地址:</label>
+                            <div class="col-sm-9">
+                                @Html.TextBoxFor(model => model.fAddress, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fAddress)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期望对象年龄:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.fAge, @ViewBag.selectAgeList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fAge)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期望对象身高:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.fHeight, @ViewBag.selectHeightList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fHeight)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期望对象学历:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.fEdu, @ViewBag.selectEduList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fEdu)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期望对象月收入:</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownListFor(model => model.fMoney, @ViewBag.selectMoneyList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fMoney)
+                            </div>
+                        </div>
+                        <hr />
+                        <h3 class="text-center">其他信息</h3>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">管理员备注:</label>
+                            <div class="col-sm-9">
+                                @Html.TextAreaFor(model => model.aRemark, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.aRemark)
+                            </div>
+                        </div>
+                        <div style="margin-left:100px;"><input type="submit" value="保存" class="btn btn-default" /></div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <p> @Html.ActionLink("返回首页", "index", "home")</p>
+    </footer>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.form.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#img1").attr("src", $("#uFaceUrl").val());
+            $("#file").bind("change", function () {
+                $("#form_postFile").ajaxSubmit({
+                    success: function (data) {
+                        $("#img1").attr("src", data.filePath);
+                        $("#uFaceUrl").val(data.filePath);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+@*@model XiangQin.Models.BaseUserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改信息</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Microsoft YaHei';
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2 class="text-center">修改用户信息</h2>
+        <div id="form-user" class="col-sm-6 col-sm-push-3">
+            @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.uId)
+                <hr />
+                <h3 class="text-center">基本信息</h3>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">用户姓名:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.uName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uName)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">年龄:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uAge, @ViewBag.selectAgeList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uAge)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">地址:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.uAddress, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uAddress)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">身高:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uHeight, @ViewBag.selectHeightList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uHeight)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">血型:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uBlood, @ViewBag.selectBloodList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uBlood)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">体重:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.uWeight, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uWeight)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">学历:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uEdu, @ViewBag.selectEduList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uEdu)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">职业:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uProfession, @ViewBag.selectProList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uProfession)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">月收入:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uMoney, @ViewBag.selectMoneyList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uMoney)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">婚姻状况:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uMarriage, @ViewBag.selectMarriageList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uMarriage)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">住房情况:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.uHouse, @ViewBag.selectHouseList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uHouse)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">自我介绍:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.uSpeak, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uSpeak)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">用户头像:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.uFaceUrl, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.uFaceUrl)
+                    </div>
+                </div>
+                <hr />
+                <h3 class="text-center">征友信息</h3>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">期望对象地址:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.fAddress, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fAddress)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">期望对象年龄:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.fAge, @ViewBag.selectAgeList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fAge)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">期望对象身高:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.fHeight, @ViewBag.selectHeightList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fHeight)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">期望对象学历:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.fEdu, @ViewBag.selectEduList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fEdu)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">期望对象月收入:</label>
+                    <div class="col-sm-9">
+                        @Html.DropDownListFor(model => model.fMoney, @ViewBag.selectMoneyList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.fMoney)
+                    </div>
+                </div>
+                <hr />
+                <h3 class="text-center">其他信息</h3>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">管理员备注:</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.aRemark, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.aRemark)
+                    </div>
+                </div>
+                <p>
+                    <input type="submit" value="修改" class="btn btn-default" />
+                </p>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+</body>
+</html>*@

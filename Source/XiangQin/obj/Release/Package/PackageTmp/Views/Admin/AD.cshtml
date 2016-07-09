@@ -1,0 +1,215 @@
+﻿@model IEnumerable<XiangQin.Models.AD>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>广告列表</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/theme.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+
+    <script src="/lib/jquery-1.8.1.min.js" type="text/javascript"></script>
+
+    <!-- Demo page code -->
+
+    <style type="text/css">
+        #line-chart {
+            height: 300px;
+            width: 800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+
+        .brand {
+            font-family: georgia, serif;
+        }
+
+            .brand .first {
+                color: #ccc;
+                font-style: italic;
+            }
+
+            .brand .second {
+                color: #fff;
+                font-weight: bold;
+            }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body>
+    <!--<![endif]-->
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="sidebar-nav">
+
+
+
+                    <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>操作</div>
+                    <ul id="dashboard-menu" class="nav nav-list collapse in">
+                        <li>@Html.ActionLink("返回首页", "Index", "Admin")</li>
+                        <li>@Html.ActionLink("用户管理", "List")</li>
+                        <li>@Html.ActionLink("添加用户", "Create")</li>
+                        <li class="active">@Html.ActionLink("广告管理", "AD")</li>
+                        <li>@Html.ActionLink("退出账号", "loginOut")</li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="span9">
+                <h1 class="page-title">广告管理</h1>
+                <div class="btn-toolbar">
+                    
+                    <div class="btn-group">
+                        @Html.ActionLink("创建一个新广告", "CreateAD", null, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div class="well">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                广告编号
+                                </th>
+                                <th>
+                                    标题
+                                </th>
+                                <th>
+                                    图片地址
+                                </th>
+                                <th>
+                                    链接地址
+                                </th>
+                                <th>操作</th>
+                                <th style="width: 26px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.aId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aPicUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aLinkUrl)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "ADEdit", new { id = item.aId }) |
+            @Html.ActionLink("删除", "DeleteAD", new { id = item.aId })
+        </td>
+    </tr>
+}
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <p> @Html.ActionLink("返回首页", "index", "home")</p>
+    </footer>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <title>广告列表</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+               广告编号
+            </th>
+            <th>
+               标题
+            </th>
+            <th>
+               图片地址
+            </th>
+            <th>
+                链接地址
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.aId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aPicUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.aLinkUrl)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "ADEdit", new { id = item.aId }) |
+                @Html.ActionLink("删除", "DeleteAD", new { id = item.aId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <p style="text-align:right">
+        @Html.ActionLink("创建一个新广告", "CreateAD") &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+   
+</body>
+</html>*@

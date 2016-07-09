@@ -1,0 +1,163 @@
+﻿@model XiangQin.Models.FilterUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>征友条件</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+@using (@Html.BeginForm(FormMethod.Post))
+{
+    <div id="nav-top">
+        <div class="nav-back">
+            <i class="le_trg"></i> @Html.ActionLink("返回", "Index", "Home", null,new { @class = "text-gray" })
+        </div>
+        <div class="nav-title">
+
+            <span>征友条件</span>
+        </div>
+        <div class="nav-btn">
+            <input type="submit" name="name" class="btn-ok" value="确定" />
+        </div>
+    </div>
+   
+        <div id="content">
+        <div class="toggle">
+            <div class="pull-right">
+
+            </div>
+            <div class="toggle-title">
+                年龄范围<span class="pull-right text-pink">不限<i class="bot_trg"></i></span>
+            </div>
+            <div class="toggle-content" hidden>
+                <div class="col-2"><div class="toggle-btn">不限</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">18-25岁</div></div>
+                <div class="col-2"><div class="toggle-btn">26-35岁</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">36-45岁</div></div>
+                <div class="col-2"><div class="toggle-btn">46-55岁</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">55岁以上</div></div>
+                @Html.HiddenFor(model=>model.uAgeScope)
+            </div>
+        </div>
+        <div class="toggle">
+            <div class="toggle-title">
+                身高范围<span class="pull-right text-pink">不限<i class="bot_trg"></i></span>
+            </div>
+            <div class="toggle-content" hidden>
+                <div class="col-2"><div class="toggle-btn">不限</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">160cm以下</div></div>
+                <div class="col-2"><div class="toggle-btn">161-165cm</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">166-170cm</div></div>
+                <div class="col-2"><div class="toggle-btn">170-180cm</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">180cm以上</div></div>
+                @Html.HiddenFor(model => model.uHeightScope)
+            </div>
+        </div>
+        <div class="toggle">
+            <div class="toggle-title">
+                最低学历<span class="pull-right text-pink">不限<i class="bot_trg"></i></span>
+            </div>
+            <div class="toggle-content" hidden>
+                <div class="col-2"><div class="toggle-btn">不限</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">初中及以下</div></div>
+                <div class="col-2"><div class="toggle-btn">高中及中专</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">大专</div></div>
+                <div class="col-2"><div class="toggle-btn">本科</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">硕士及以上</div></div>
+                @Html.HiddenFor(model => model.uEduScope)
+            </div>
+        </div>
+        <div class="toggle">
+            <div class="toggle-title">
+                收入范围<span class="pull-right text-pink">不限<i class="bot_trg"></i></span>
+            </div>
+            <div class="toggle-content" hidden>
+                <div class="col-2"><div class="toggle-btn">不限</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">2000元以下</div></div>
+                <div class="col-2"><div class="toggle-btn">2000-5000</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">5000-10000</div></div>
+                <div class="col-2"><div class="toggle-btn">10000-20000</div></div>
+                <div class="col-2"><div class="toggle-btn" style="border-right-width:0">20000以上</div></div>
+
+                @Html.HiddenFor(model => model.uMoneyScope)
+            </div>
+        </div>
+        <div class="toggle">
+            <div class="toggle-title">
+                居住地<span class="pull-right text-pink">不限<i class="bot_trg"></i></span>
+            </div>
+            <div class="toggle-content" hidden>
+                @Html.HiddenFor(model => model.uAddressScope)
+                <div class="col-4"><div class="toggle-btn">北京</div></div>
+                <div class="col-4"><div class="toggle-btn">上海</div></div>
+                <div class="col-4"><div class="toggle-btn">天津</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">重庆</div></div>
+                <div class="col-4"><div class="toggle-btn">河北</div></div>
+                <div class="col-4"><div class="toggle-btn">山西</div></div>
+                <div class="col-4"><div class="toggle-btn">内蒙古</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">黑龙江</div></div>
+                <div class="col-4"><div class="toggle-btn">吉林</div></div>
+                <div class="col-4"><div class="toggle-btn">辽宁</div></div>
+                <div class="col-4"><div class="toggle-btn">陕西</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">甘肃</div></div>
+                <div class="col-4"><div class="toggle-btn">青海</div></div>
+                <div class="col-4"><div class="toggle-btn">新疆</div></div>
+                <div class="col-4"><div class="toggle-btn">宁夏</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">山东</div></div>
+                <div class="col-4"><div class="toggle-btn">河南</div></div>
+                <div class="col-4"><div class="toggle-btn">江苏</div></div>
+                <div class="col-4"><div class="toggle-btn">浙江</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">安徽</div></div>
+                <div class="col-4"><div class="toggle-btn">江西</div></div>
+                <div class="col-4"><div class="toggle-btn">福建</div></div>
+                <div class="col-4"><div class="toggle-btn">台湾</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">湖北</div></div>
+                <div class="col-4"><div class="toggle-btn">湖南</div></div>
+                <div class="col-4"><div class="toggle-btn">广东</div></div>
+                <div class="col-4"><div class="toggle-btn">广西</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">海南</div></div>
+                <div class="col-4"><div class="toggle-btn">四川</div></div>
+                <div class="col-4"><div class="toggle-btn">云南</div></div>
+                <div class="col-4"><div class="toggle-btn">贵州</div></div>
+                <div class="col-4"><div class="toggle-btn" style="border-right-width:0">西藏</div></div>
+                <div class="col-4"><div class="toggle-btn">香港</div></div>
+                <div class="col-4"><div class="toggle-btn">澳门</div></div>
+            </div>
+        </div>
+
+    </div>
+    }
+    <script>
+        $("#uAgeScope,#uHeightScope,#uEduScope,#uMoneyScope,#uAddressScope").val("不限");
+        $(".toggle-title").click(function () {
+            $(this).next().toggle();
+            $(this).children().children().toggleClass(function () {
+                if ($(this).parent().is('.top_trg')) {
+                    return "bot_trg";
+                } else {
+                    return "top_trg";
+                }
+            });
+        });
+        $(".toggle-btn").click(function () {
+            if ($(this).is(".text-pink")) {
+                $(this).removeClass("text-pink");
+            } else {
+                $(this).parent().parent().children().children().removeClass("text-pink");
+                $(this).addClass("text-pink");
+                $(this).parent().parent().children("#uAgeScope,#uHeightScope,#uEduScope,#uMoneyScope,#uAddressScope").val($(this).text())
+                console.log($(this).parent().parent().children("#uAgeScope,#uHeightScope,#uEduScope,#uMoneyScope,#uAddressScope").val())
+            }
+           
+            
+        })
+    </script>
+</body>
+</html>

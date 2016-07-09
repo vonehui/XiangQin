@@ -1,0 +1,89 @@
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\XiangQin.dll.config
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\XiangQin.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\XiangQin.pdb
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\Antlr3.Runtime.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\EntityFramework.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\Microsoft.Web.Infrastructure.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\Newtonsoft.Json.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Net.Http.Formatting.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Http.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Http.WebHost.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Mvc.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Optimization.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Providers.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Razor.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.WebPages.Deployment.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.WebPages.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.WebPages.Razor.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\WebGrease.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\EntityFramework.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\Newtonsoft.Json.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Net.Http.Formatting.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Http.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Http.WebHost.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Mvc.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.Razor.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.WebPages.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.WebPages.Deployment.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\System.Web.WebPages.Razor.xml
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\EntityFramework.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.Http.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.Mvc.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.Optimization.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.Providers.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.Razor.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.WebPages.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\obj\Release\XiangQin.dll
+d:\我的文档\visual studio 2013\Projects\XiangQin\XiangQin\obj\Release\XiangQin.pdb
+D:\我的文档\Visual Studio 2013\Projects\XiangQin\XiangQin\obj\Release\XiangQin.csprojResolveAssemblyReference.cache
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\XiangQin.dll.config
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\XiangQin.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\XiangQin.pdb
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\Antlr3.Runtime.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\Microsoft.Web.Infrastructure.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\Newtonsoft.Json.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Net.Http.Formatting.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Http.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Http.WebHost.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Mvc.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Optimization.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Providers.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Razor.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.WebPages.Deployment.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.WebPages.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.WebPages.Razor.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\WebGrease.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\Newtonsoft.Json.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Net.Http.Formatting.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Http.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Http.WebHost.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Mvc.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.Razor.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.WebPages.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.WebPages.Deployment.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Web.WebPages.Razor.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.Http.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.Optimization.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.Providers.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.WebPages.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\obj\Release\XiangQin.csprojResolveAssemblyReference.cache
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\obj\Release\XiangQin.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\obj\Release\XiangQin.pdb
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Net.Http.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Net.Http.WebRequest.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Net.Http.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\System.Net.Http.WebRequest.xml
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Net.Http.resources.dll
+C:\WorkSpace\CodeSource\XiangQin_07_07_02\XiangQin\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll

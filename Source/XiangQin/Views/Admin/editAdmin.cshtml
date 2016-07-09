@@ -1,0 +1,118 @@
+﻿@model XiangQin.Models.ChangeAdmin
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>修改密码</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/theme.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- Demo page code -->
+
+    <style type="text/css">
+        #line-chart {
+            height: 300px;
+            width: 800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+
+        .brand {
+            font-family: georgia, serif;
+        }
+
+            .brand .first {
+                color: #ccc;
+                font-style: italic;
+            }
+
+            .brand .second {
+                color: #fff;
+                font-weight: bold;
+            }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+</head>
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body>
+    <!--<![endif]-->
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <ul class="nav pull-right"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row-fluid">
+            <div class="dialog span4">
+                <div class="block">
+                    <div class="block-heading">修改密码</div>
+                    <div class="block-body">
+                        @using (@Html.BeginForm(FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <label>账号:</label>
+
+                                @Html.TextBoxFor(a => a.aUserName, new { @class = "span12", @placeholder = "请输入你的管理员账号" })
+                                @Html.ValidationMessageFor(a => a.aUserName)
+                            </div>
+                            <div class="form-group">
+                                <label>旧密码:</label>
+                                @Html.PasswordFor(a => a.aPassword, new { @class = "span12", @placeholder = "请输入你的旧密码" })
+                                @Html.ValidationMessageFor(a => a.aPassword)
+                            </div>
+                            <div class="form-group">
+                                <label>新密码:</label>
+                                @Html.PasswordFor(a => a.aNewPassword, new { @class = "span12", @placeholder = "请输入你的新密码" })
+                                @Html.ValidationMessageFor(a => a.aNewPassword)
+                            </div>
+                            <div class="form-group">
+                                <label>重复输入新密码:</label>
+                                @Html.PasswordFor(a => a.aReNewPassword, new { @class = "span12", @placeholder = "请再次输入你的新密码" })
+                                @Html.ValidationMessageFor(a => a.aReNewPassword)
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="修改" class="btn btn-primary pull-right" id="btn_change" />
+                                <div class="clearfix"></div>
+
+                                @Html.ActionLink("登录", "index", "Admin")|@Html.ActionLink("返回首页", "index", "home")
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
+

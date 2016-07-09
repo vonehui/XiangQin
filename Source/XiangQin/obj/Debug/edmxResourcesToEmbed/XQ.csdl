@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="XQ" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="XQContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfoSet" EntityType="XQ.UserInfo" />
+    <EntitySet Name="BaseUserInfoSet" EntityType="XQ.BaseUserInfo" />
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Education" Type="String" Nullable="false" />
+    <Property Name="Income" Type="String" Nullable="false" />
+    <Property Name="Occupation" Type="String" Nullable="false" />
+    <Property Name="Constellation" Type="String" Nullable="false" />
+    <Property Name="Weight" Type="String" Nullable="false" />
+    <Property Name="Blood" Type="String" Nullable="false" />
+    <Property Name="Marriage" Type="String" Nullable="false" />
+    <Property Name="House" Type="String" Nullable="false" />
+    <Property Name="WantChild" Type="String" Nullable="false" />
+    <Property Name="LongLove" Type="String" Nullable="false" />
+    <Property Name="LikeType" Type="String" Nullable="false" />
+    <Property Name="PremaritalSex" Type="String" Nullable="false" />
+    <Property Name="LivingWithParents" Type="String" Nullable="false" />
+    <Property Name="AttractivePosition" Type="String" Nullable="false" />
+    <Property Name="Hobby" Type="String" Nullable="false" />
+    <Property Name="Characteristics" Type="String" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" />
+    <Property Name="Age" Type="String" Nullable="false" />
+    <Property Name="UserSpeak" Type="String" Nullable="false" />
+    <Property Name="faceUrl" Type="String" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" />
+    <Property Name="UserPoint" Type="String" Nullable="false" />
+    <Property Name="UserHeight" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseUserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uAge" Type="Int32" Nullable="false" />
+    <Property Name="uAddRess" Type="String" Nullable="false" />
+    <Property Name="uHeight" Type="String" Nullable="false" />
+    <Property Name="uBlood" Type="String" Nullable="false" />
+    <Property Name="uWeight" Type="String" Nullable="false" />
+    <Property Name="uEdu" Type="String" Nullable="false" />
+    <Property Name="uProfession" Type="String" Nullable="false" />
+    <Property Name="uMoney" Type="String" Nullable="false" />
+    <Property Name="uMarriage" Type="String" Nullable="false" />
+    <Property Name="uHouse" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>
